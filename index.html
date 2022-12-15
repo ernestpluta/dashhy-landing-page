@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="sass/main.scss">
+    <title>Dashhy</title>
+  </head>
+  <body>
+    <header>
+      <div class="bg-white">
+      <div class="navigation__wrapper container-nav">
+        <nav class="navigation" aria-label="Primary">
+          <img class="navigation__logo" src="./images/logo.svg" alt="Dashhy logo">
+          <ul class="navigation__list hideMobileMenu" role="list">
+            <li class="navigation__item"><a class="navigation__link" href="#">Home</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#">Features</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#">Pricing</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#">Testimonials</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#">FAQ</a></li>
+            <hr class="navigation__separator">
+            <button class="navigation__btn btn-secondary navigation__item--mobile">Log in / Sign up</button>
+          </ul>
+          <div class="navigation__group">
+            <li class="navigation__item"><a class="navigation__link" href="#">Sign In</a></li>
+            <button class="navigation__btn btn-secondary">Get Started</button>
+          </div>
+          <button class="navigation__hamburger">
+            <i class="menu-close"><img class="hamburger-icon" src="./images/menu-close.svg" alt="hamburger-icon"></i>
+            <i class="menu-open" ><img class="hamburger-icon" src="./images/menu-open.svg" alt="hamburger-icon"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="overflow-hidden bg-hero">
+        <div class="hero__wrapper container grid">
+          <div class="hero">
+            <h1 class="hero__title">Manage your sales seemlessly with analytics from Dashhy.</h1>
+            <p class="hero__description">Dashhy is a platform that helps you monitor your sales in easy, fast and feature rich way.</p>
+            <div class="hero__btn-group">
+              <button class="hero__btn btn-outline"><img src="./images/play2.svg" alt=""><span>Watch Video</span></button>
+              <button class="hero__btn btn-primary"><span>Start free trial</span><img src="./images/chevron.svg" alt=""></button>
+            </div>
+            <div class="hero__dashboard-wrapper">
+              <div class="hero__dashboard">
+                <picture>
+                  <source class="hero__image-big" 
+                  srcset="./images/dashboard-2.png" media="(min-width: 48em)"/>
+                  <img class="hero__image" src="./images/hero-mobile.png" alt="dashboard image">
+                 </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="details__wrapper bg-dark">
+          <div class="details container">
+            <div class="details__card">
+              <h2 class="details__title">75,000,000</h2>
+              <p class="details__subtitle">Hours of Usage</p>
+            </div>
+            <div class="details__card">
+              <h2 class="details__title">150+</h2>
+              <p class="details__subtitle">Integration Partners</p>
+            </div>
+            <div class="details__card">
+              <h2 class="details__title">200,000+</h2>
+              <p class="details__subtitle">Active Customers</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="container-brands">
+        <div class="brands__wrapper">
+          <div class="brands">
+            <p class="brands__title">trusted by more than 250+ brands</p>
+             <picture class="brands__picture">
+              <source srcset="./images/brands.png" media="(min-width: 36em)"/>
+              <img src="./images/brands-mobile.png" alt="brands list">
+             </picture>
+          </div>
+        </div>
+      </div>
+
+      <div class="container flex">
+        <div class="features">
+          <div class="feature">
+            <div class="feature__left">
+              <h2 class="feature__headline">Stop worrying and <br/> start making profits.</h2>
+              <div class="feature__group">
+                <p class="feature__description">Dashhy takes care of your business by giving you an easy way to track, manage and analyze data in one place.</p>
+                <ul class="feature__list">
+                  <li class="feature__item">Powerful reporting and data analysis</li>
+                  <li class="feature__item">Real-time events tracking</li>
+                  <li class="feature__item">Scalable and easy to get started</li>
+                </ul>
+                </div>
+            </div>
+            <div class="feature__right">
+              <img class="feature__image" src="./images/feature-first.png" alt="third feature">
+            </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature__left">
+                <h2 class="feature__headline">Automate your workflow with Advanced AI tools.</h2>
+                <div class="feature__group">
+                  <p class="feature__description">Our trademark technology for AI analysis let’s you set goals, predict outcomes and most importantly do it all for you with just one click.</p>
+                  <ul class="feature__list">
+                    <li class="feature__item">Advanced AI Analysis and Monthly Predictions</li>
+                    <li class="feature__item"><span>Over 150+ </span>Integrations</li>
+                    <div class="feature__btn-group">
+                      <button class="feature__btn btn-primary">Try 30 days for free</button>
+                      <button class="feature__btn btn-tertiary">Learn more...</button>
+                    </div>
+                  </div>
+              </div>
+              <div class="feature__right">
+                <img class="feature__image" src="./images/feature-second.png" alt="third feature">
+              </div>
+              </div>
+
+              <div class="feature">
+                <div class="feature__left">
+                  <h2 class="feature__headline">Get notified from anywhere, anytime.</h2>
+                  <div class="feature__group">
+                    <h3 class="feature__title">Dashhy Mobile <span class="chip">New</span></h3>
+                    <p class="feature__description">Our mobile app helps you to connect with your   customers easily with advanced feedback features and live notifications right at the tip of your finger.</p>
+                    </div>
+                    <div class="feature__link-group flex">
+                      <a class="feature__link" href="#">
+                        <img src="./images/google-play.svg" alt="">
+                      </a>
+                      <a class="feature__link" href="#">
+                        <img src="./images/apple-store.svg" alt="">
+                      </a>
+                    </div>
+                </div>
+                <div class="feature__right">
+                  <img class="feature__image" src="./images/feature-third.png" alt="third feature">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="bg-pricing">
+        <div class="pricing container">
+          <div class="pricing__group">
+            <h1 class="pricing__headline">Ready to get started?</h1>
+            <p class="pricing__text">Choose a plan appropriate for your needs.</p>
+          </div>
+          <div class="pricing__options">
+            <button class="pricing__option pricing__option--active">Monthly</button>
+            <button class="pricing__option">Yearly</button>
+          </div>
+          <div class="pricing__plans grid">
+            <div class="pricing__plan">
+              <h4 class="pricing__title">Basic</h4>
+              <h2 class="pricing__price">$20<span>/ month</span></h2>
+              <p class="pricing__description">Best suitable for startups.</p>
+              <ul class="pricing__list">
+                <li class="pricing__item">Basic Analytics</li>
+                <li class="pricing__item">150+ Integrations</li>
+                <li class="pricing__item">Email & SMS Reminders</li>
+                <li class="pricing__item">CMS Integration</li>
+                <li class="pricing__item">Customer Support</li>
+              </ul>
+              <button class="pricing__btn btn-primary">Choose Basic Plan</button>
+            </div>
+
+            <div class="pricing__plan">
+              <h4 class="pricing__title">Advanced</h4>
+              <h2 class="pricing__price">$49<span>/ month</span></h2>
+              <p class="pricing__description">Best suitable for large companies.</p>
+              <ul class="pricing__list">
+                <li class="pricing__item">Advanced Analytics</li>
+                <li class="pricing__item">150+ Integrations</li>
+                <li class="pricing__item">Email & SMS Reminders</li>
+                <li class="pricing__item">CMS Integration</li>
+                <li class="pricing__item">Customer Support 24/7</li>
+              </ul>
+              <button class="pricing__btn btn-primary">Choose Advanced Plan</button>
+            </div>
+
+            <div class="pricing__plan">
+              <h4 class="pricing__title">Custom</h4>
+              <h2 class="pricing__price">$60+<span>/ month</span></h2>
+              <p class="pricing__description">Best suitable for enterprise.</p>
+              <ul class="pricing__list">
+                <li class="pricing__item">Advanced  + AI Powered Analytics</li>
+                <li class="pricing__item">150+ Integrations</li>
+                <li class="pricing__item">Advanced Email & SMS Reminders</li>
+                <li class="pricing__item">Self-hosting + CMS Integration</li>
+                <li class="pricing__item">Priority 24/7 Customer Support</li>
+              </ul>
+              <button class="pricing__btn btn-secondary"><img src="./images/envelope.svg">Request offer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="integrations__wrapper container-integrations">
+        <div class="integrations">
+          <div class="integrations__items">
+            <div class="integrations__item"><img src="./images/dropbox.svg" alt="dropbox"></div>
+            <div class="integrations__item"><img src="./images/shoppe.svg" alt="shoppe"></div>
+            <div class="integrations__item"><img src="./images/googleads.svg" alt="google ads"></div>
+            <div class="integrations__item"><img src="./images/paypal.svg" alt="paypal"></div>
+            <div class="integrations__item"><img src="./images/slack.svg" alt="slack"></div>
+            <div class="integrations__item"><img src="./images/zapier.svg" alt="zapier"></div>
+        </div>
+          <div class="integrations__group">
+            <p class="integrations__overline overline">Integrations</p>
+            <h2 class="integrations__title">Connect with apps you love and enjoy.</h2>
+            <p class="integrations__description">Supercharge your workflow and connect with the tools you use every day.</p>
+            <div class="integrations__group--btn">
+              <button class="integrations__btn btn-primary">Become a Partner</button>
+              <button class="integrations__btn btn-tertiary">Learn more..</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-testimonials">
+        <div class="testimonials__wrapper container">
+          <p class="testimonials__wrapper-overline overline">Testimonials</p>
+          <h2 class="testimonials__wrapper-headline">Our customers say it best.</h2>
+          <div class="testimonials__swiper swiper">
+          <div class="testimonials grid swiper-wrapper">
+            <div class="testimonial swiper-slide">
+              <div class="testimonial__avatar">
+                <img src="./images/avatar-01.png" alt="avatar icon"> 
+                <div class="testimonial__user-details">
+                  <p class="testimonial__name">Anna Dane</p>
+                  <p class="testimonial__company">Executive Manger, Paypal</p>
+                </div>
+              </div>
+              <p class="testimonial__description">"Not able to tell you how happy I am with Dashhy. I would gladly pay over 600 dollars for Dashhy."</p>
+              <p class="testimonial__date"> 6:24 PM - Sep 12, 2022</p>
+            </div>
+            <div class="testimonial swiper-slide">
+              <div class="testimonial__avatar">
+                <img src="./images/avatar-02.png" alt="avatar icon"> 
+                <div class="testimonial__user-details">
+                  <p class="testimonial__name">Jane Doe</p>
+                  <p class="testimonial__company">Accountant, ING</p>
+                </div>
+              </div>
+              <p class="testimonial__description">"It really saves me time and effort. Dashhy is exactly what our business has been lacking. Amazing!"</p>
+              <p class="testimonial__date"> 4:24 AM - Nov 24, 2022</p>
+            </div>
+            <div class="testimonial swiper-slide">
+              <div class="testimonial__avatar">
+                <img src="./images/avatar-03.png" alt="avatar icon"> 
+                <div class="testimonial__user-details">
+                  <p class="testimonial__name">Michael Hoff</p>
+                  <p class="testimonial__company">Product Designer, Gener8</p>
+                </div>
+              </div>
+              <p class="testimonial__description">"Your company is truly upstanding and is behind its product 100%. Keep up the excellent work."</p>
+              <p class="testimonial__date"> 9:33 PM - Oct 20, 2022</p>
+            </div>
+            <div class="testimonial swiper-slide">
+              <div class="testimonial__avatar">
+                <img src="./images/avatar-04.png" alt="avatar icon"> 
+                <div class="testimonial__user-details">
+                  <p class="testimonial__name">Joanna Keith</p>
+                  <p class="testimonial__company">CEO, Zapier</p>
+                </div>
+              </div>
+              <p class="testimonial__description">"After using Dashhy my business skyrocketed. I was amazed at the quality of Dashhy. I love Dashhy."</p>
+              <p class="testimonial__date"> 8:01 PM - July 19, 2022</p>
+            </div>
+            <div class="testimonial swiper-slide">
+              <div class="testimonial__avatar">
+                <img src="./images/avatar-05.png" alt="avatar icon"> 
+                <div class="testimonial__user-details">
+                  <p class="testimonial__name">John Smith</p>
+                  <p class="testimonial__company">Executive Manger, Paypal</p>
+                </div>
+              </div>
+              <p class="testimonial__description">"We're loving it. I like Dashhy more and more each day because it makes my life a lot easier."</p>
+              <p class="testimonial__date"> 10:24 PM - Jan 6, 2022</p>
+            </div>
+            <div class="testimonial swiper-slide">
+              <div class="testimonial__avatar">
+                <img src="./images/avatar-06.png" alt="avatar icon"> 
+                <div class="testimonial__user-details">
+                  <p class="testimonial__name">Andrew Tate</p>
+                  <p class="testimonial__company">Executive Manger, Paypal</p>
+                </div>
+              </div>
+              <p class="testimonial__description">"I STRONGLY recommend Dashhy to EVERYONE interested in running a successful online business!”</p>
+              <p class="testimonial__date"> 9:12 PM - Sep 18, 2022</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+
+
+      <div class="faq container">
+        <div class="faq__group">
+          <h1 class="faq__headline">Frequently Asked Questions</h1>
+          <p class="faq__text"> If your question doesn't appear here you can also contact us via email.</p>
+        </div>
+        <div class="faq__wrapper flex">
+          <div class="faq__left">
+            <details class="faq__details">
+              <summary class="faq__summary">
+                  Can I pay using PayPal?
+              </summary>
+              <div class="faq__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem cupiditate exercitationem amet praesentium obcaecati eos odio maiores, vel commodi omnis quibusdam unde? Aut itaque velit.
+              </div>
+            </details>
+            <details class="faq__details">
+              <summary class="faq__summary">
+                How does the billing work?
+              </summary>
+              <div class="faq__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem cupiditate exercitationem amet praesentium obcaecati eos odio maiores, vel commodi omnis quibusdam unde? Aut itaque velit.
+              </div>
+            </details>
+            <details class="faq__details">
+              <summary class="faq__summary">
+                Is there a demo of your product?
+              </summary>
+              <div class="faq__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem cupiditate exercitationem amet praesentium obcaecati eos odio maiores, vel commodi omnis quibusdam unde? Aut itaque velit.
+              </div>
+            </details>
+          </div>
+          <div class="faq__right">
+            <details class="faq__details">
+              <summary class="faq__summary">
+                Can I change my plan later?
+              </summary>
+              <div class="faq__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem cupiditate exercitationem amet praesentium obcaecati eos odio maiores, vel commodi omnis quibusdam unde? Aut itaque velit.
+              </div>
+            </details>
+            <details class="faq__details">
+              <summary class="faq__summary">
+                How do I change or update my account details?
+              </summary>
+              <div class="faq__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem cupiditate exercitationem amet praesentium obcaecati eos odio maiores, vel commodi omnis quibusdam unde? Aut itaque velit.
+              </div>
+            </details>
+            <details class="faq__details">
+              <summary class="faq__summary">
+                What are all the payment methods?
+              </summary>
+              <div class="faq__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem cupiditate exercitationem amet praesentium obcaecati eos odio maiores, vel commodi omnis quibusdam unde? Aut itaque velit.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+
+    <footer>
+      <div class="container-newsletter">
+        <div class="newsletter">
+          <div class="newsletter__left">
+            <h2 class="newsletter__headline">Ready to grow your business?</h2>
+            <p class="newsletter__description">Join our newsletter to receive news regarding new features, discounts and all the good stuff you might be interested in.</p>
+            <form class="newsletter__group">
+              <input class="newsletter__input" type="email" placeholder="Your e-mail address">
+              <button class="newsletter__btn btn-primary" type="submit">Get Started</button>
+            </form>
+          </div>
+          <div class="newsletter__right"></div>
+        </div>
+      </div>
+
+      <div class="bg-footer">
+        <div class="footer container grid">
+          <div class="footer__logo">
+            <img src="./images/logo.svg" alt="">
+            <p class="footer__description">Dashhy is a platform that helps you monitor your sales in easy, fast and feature rich way.</p>
+          </div>
+          <div class="footer__navigation">
+            <h5 class="footer__title">Navigation</h5>
+            <nav aria-label="Footer">
+              <ul class="footer__list" role="list" aria-label="Navigation">
+                <li class="footer__item"><a class="footer__link" href="#">Home</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Features</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Testimonials</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Pricing</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">FAQ</a></li>
+              </ul>
+            </nav>
+          </div>
+
+            <div class="footer__partners">
+            <h5 class="footer__title">Partners</h5>
+              <ul class="footer__list" role="list" aria-label="Partners">
+                <li class="footer__item"><a class="footer__link" href="#">Google</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Dropbox</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Zapier</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Twillio</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Wordpress</a></li>
+              </ul>
+          </div>
+
+          <div class="footer__socials">
+            <h5 class="footer__title">Social Media</h5>
+              <ul class="footer__list" role="list" aria-label="Social Media links">
+                <li class="footer__item"><a class="footer__link" href="#">Instagram</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Facebook</a></li>
+                <li class="footer__item"><a class="footer__link" href="#">Twitter</a></li>
+              </ul>
+          </div>
+          <div class="footer__contact">
+            <h5 class="footer__title">Contact</h5>
+              <ul class="footer__list" role="list" aria-label="Contact">
+                <li class="footer__item"><a class="footer__link" href="#">+48 214 241 515</a></li>
+                <li class="footer__item"><a class="footer__link" href="mailto:dashyy@contact.com">dashyy@contact.com</a></li>
+                <li class="footer__item">USA, New York</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+.container, .container-nav, .container-brands, .container-intergrations{
+    max-width: 76em; // 16px root - 1216px  18px root - 1368px
+    margin-inline: auto;
+    width: min(76em, 100% - 3rem);
+    min-height: fit-content;
+}
+
+.container-nav {
+    width: 100%;
+    @include lg {
+        width: min(76em, 100% - 2.5rem) !important;
+    }
+}
+.container-intergrations {
+    width: auto;
+    @include md {
+        width: min(76em, 100% - 2.5rem);
+    }
+}
+.container-newsletter{
+    @include lg {
+        max-width: 76em;
+        margin-inline: auto;
+        width: min(76em, 100% - 2rem);
+    }
+}

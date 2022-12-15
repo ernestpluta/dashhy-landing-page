@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+.footer {
+    padding-block: calc(8.25rem + 6.75rem) 4rem;
+
+    &__logo {
+        grid-column: 1 / 6;
+        margin-inline:.5rem;
+        margin-bottom: 2rem;
+    }
+    &__description {
+        margin-left: .5rem;
+        color: $text;
+        margin-top: 1rem;
+        max-width: 30ch;
+        line-height: 1.875em;
+    }
+    &__navigation, &__partners, &__socials, &__contact {
+        grid-column: span 3;
+        margin-inline:.5rem;
+    }
+    &__socials, &__contact{
+        margin-top:4rem;
+    }
+    @include md {
+        &__logo {
+            grid-column: 1 / -1;
+        }
+        &__socials, &__contact{
+            margin-top:0rem;
+        }
+    }
+    @include lg-2 {    
+        &__logo{
+            grid-column: span 4;
+            margin-inline: 0;
+        }
+        &__navigation, &__partners, &__socials, &__contact  {
+            grid-column: span 2;
+        }
+        &__socials, &__contact{
+            margin-top:0;
+        }
+    }
+
+
+    &__list{
+        margin-top:1rem;
+    }
+
+    &__item {
+        color: $text;
+        font-size: .875rem;
+        padding-block:.5rem;
+        @include sm {
+            font-size: 1rem;
+        }
+    }
+}

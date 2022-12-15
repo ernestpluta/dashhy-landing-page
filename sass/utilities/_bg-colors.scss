@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+.bg-hero {
+    background: linear-gradient(180deg, rgba(250, 250, 250, 0) 0%, rgba(37, 99, 235, 0.15) 88.53%);
+}
+.bg-dark{
+    background: $dark;
+}
+.bg-white{
+    background: white;
+}
+.bg-pricing{
+    background: linear-gradient(180deg, #F8F9FC 62.23%, rgba(248, 249, 252, 0) 100.48%);
+}
+.bg-footer {
+    background: hsl(220, 37%, 97%);
+}
+.bg-testimonials{
+    background: hsl(220, 37%, 97%);
+}

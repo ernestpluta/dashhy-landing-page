@@ -1,0 +1,78 @@
+@use "../abstracts"as *;
+
+$btn-padding: 1.25rem 2.5rem !default;
+$border-none: none !default;
+$bg: $primary !default;
+$clr-white: white !default;
+
+button,
+.btn-primary,
+.btn-secondary,
+.btn-tertiary,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    font-family: $ff-inter;
+    white-space: nowrap;
+    padding: $btn-padding;
+    border: $border-none;
+    background: $bg;
+    color: $clr-white;
+    cursor: pointer;
+    transition: 300ms ease;
+    border-radius: 12px;
+    font-weight: 500;
+    outline: 4px solid transparent;
+
+    &:focus-visible {
+        outline: 4px solid $primary-focus;
+    }
+}
+a[href],
+area[href],
+input:not([disabled]),
+select:not([disabled]),
+textarea:not([disabled]),
+button:not([disabled]),
+iframe,
+[tabindex],
+[contentEditable=true]
+{
+    &:focus-visible:not([tabindex='-1'])
+    {
+        outline: 4px solid $primary-focus;
+    }
+}
+
+.btn-primary {
+    box-shadow: 4px 8px 16px hsla(221, 83%, 53%, 0.2);
+    &:hover, &:active {
+        background: $medium-dark-blue;
+        box-shadow: 4px 8px 16px hsla(221, 78%, 34%, 0.2);
+    }
+    &:disabled {
+        background: $primary-disabled;
+    }
+}
+
+.btn-secondary {
+    background: $dark;
+    &:hover {
+        background: $dark-low-opacity;
+        box-shadow: 4px 8px 16px hsla(0, 0%, 8%, 16%);
+    }
+}
+
+.btn-outline {
+    border: 1px solid black;
+    background: none;
+}
+
+.btn-tertiary {
+    color: $primary;
+    background: $primary-low-opacity;
+    padding: 1.25rem 1.75rem;
+    &:hover, &:active {
+        background:hsla(221, 83%, 53%, 20%);
+    }
+}

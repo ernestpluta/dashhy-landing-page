@@ -1,0 +1,10 @@
+@use "../abstracts/breakpoints" as *;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    @include md {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+    }
+}

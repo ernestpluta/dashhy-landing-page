@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+.chip {
+    display: inline-block;
+    color: $accent;
+    font-size:.75rem;
+    background: rgba($accent, 0.1);
+    padding: .25rem .5rem;
+    margin-inline:.5rem;
+    border-radius: 1em;
+    vertical-align: 4px;
+}

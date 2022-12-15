@@ -1,0 +1,8 @@
+@use "../abstracts/" as *;
+::selection, ::-moz-selection {
+    background: $primary;
+    color: white;
+}
+img::selection, img::-moz-selection {
+    background: transparent;
+}

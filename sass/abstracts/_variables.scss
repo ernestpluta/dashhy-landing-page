@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Gilroy";
+    font-weight: bold;
+    src: url(../fonts/Gilroy-Bold.ttf) format("truetype");
+    }
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 500;
+    src: url(../fonts/Gilroy-Medium.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Gilroy";
+    font-weight: 400;
+    src: url(../fonts/Gilroy-Regular.ttf) format("truetype");
+}
+
+$ff-inter: 'Inter', sans-serif;
+$ff-gilroy: "Gilroy";
+
+// colors
+
+$primary: hsl(221, 83%, 53%);
+$primary-focus: hsla(221, 83%, 53%, 40%);
+$primary-disabled: hsl(221, 83%, 81%);
+$primary-low-opacity: hsla(221, 83%, 53%, 10%);
+$medium-dark-blue: hsl(221, 78%, 34%);
+$dark: hsl(0, 0%, 8%);
+$dark-low-opacity: hsla(0, 0%, 8%, 90%);
+$dark-blue: hsl(226, 43%, 17%);
+$light-blue: hsl(221, 83%, 61%);
+$white: #fff;
+$text: #757575;
+$accent: #1d8b6a;

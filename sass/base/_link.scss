@@ -1,0 +1,11 @@
+@use "../abstracts/" as *;
+
+a {
+    display: inline-block;
+    color: $text;
+    text-decoration: none;
+    &:hover, &:focus {
+        color: $dark;
+    }
+}
+

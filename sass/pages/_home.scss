@@ -1,0 +1,1033 @@
+@use "../abstracts/" as *;
+@use "../utilities/box-shadow" as *;
+@use "sass:math";
+
+// hero
+.hero__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero{
+    position: relative;
+    z-index: 0;
+    grid-column: 1 / 13;
+
+    &__title {
+        position: inherit;
+        max-width: 25ch;
+        margin-top: calc(3rem + 5.063rem);
+        @include md {
+            margin-top: calc(3rem + 6.875rem);
+            &::after {
+                content: url(../images/hero-lines.svg);
+                position: absolute;
+                right:0;
+                bottom:-.375rem;
+            }
+        }
+        @include lg {
+            margin-top:5rem;
+        }
+
+    }
+    &__description {
+        max-width: 40ch;
+        margin-top: 1.7rem;
+        color: #65666C;
+        @include md {
+            margin-top: 1.8rem;
+            font-size: 1.125rem;
+        }
+    }
+    &__title, &__description {
+        text-align: center;
+        margin-inline:auto;
+    }
+
+    &__btn-group {
+        position: inherit;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: fit-content; 
+        text-align: center;
+        margin-inline: auto;
+        margin-block: 2.5rem 2rem;
+        @include md {
+            &::before {
+                content: "";
+                background: url(../images/hero-ratings.png);
+                position: absolute;
+                width: 180px;
+                height: 142px;
+                background-repeat: no-repeat;
+                background-size: 70%;
+                left:-12rem;
+                bottom:-5.5rem;
+                @include lg {
+                    background-size: 100%;
+                    left: -20rem;
+                    bottom: -4rem;
+                }
+            }
+            &::after {
+                content: url(../images/line-decoration.svg);
+                transform: rotate(-80deg);
+                position: absolute;
+                right: -7rem;
+    
+            }
+        }
+    }
+    &__btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.25rem 2.5rem;
+    }
+    &__btn:nth-child(1){
+        color: $dark;
+        order:2;
+        border-color: transparent;
+        margin-top: .5rem;
+        flex-basis: 60%;
+        @include md{
+            margin-top:0;
+            order:1;
+            border-color:$dark;
+            margin-right:1.5rem;
+            flex-basis: auto;
+        }
+        span {
+            margin-left:.5rem;
+        }
+    }
+    &__btn:nth-child(2){
+        order:1;
+        flex-basis: 80%;
+        // margin-top:1rem;
+        @include md {
+            flex-basis: auto;
+            margin-top:0;
+        }
+        span{
+            margin-right:.5rem;
+        }
+    }
+    &__dashboard-wrapper, &__dashboard {
+        position: relative;
+    }
+    &__dashboard-wrapper {
+        &::before, &::after{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            @include md {
+                content: "";
+            }
+        }
+        &::before{
+            background: url(../images/hero-customers.png);
+            background-repeat: no-repeat;
+            @include md {
+                background-size: 38%;
+                top: -.5rem;
+                left: 66.5%;
+            }
+         }
+         &::after{
+            background: url(../images/hero-like.png);
+            background-repeat: no-repeat;
+            @include md {
+                background-size: 9%;
+                top: 42%;
+                left: 90%;
+            }
+         }
+    }
+
+    &__dashboard {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-inline:auto;
+        border-radius: 20px;
+
+        &::before , &::after{
+            content: url(../images/leaf.png);
+            position: absolute;
+            bottom: -1.25rem;
+            z-index: -1;
+        }
+        &::before{
+            left:-8rem;
+            top:auto;
+            transform: rotate(0deg);
+            
+            // display: none;
+            @include md{
+                top: auto;
+                transform: rotate(0);
+                left:-8rem;
+            }
+        }
+        &::after{
+            right:-8rem;
+            transform: scaleX(-1);
+        }
+    }
+}
+
+
+// details
+.details__wrapper{
+    position: relative;
+    z-index: 1;
+}
+.details{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include md{
+        padding-block: 0;
+    }
+    &__card {
+        padding-block:3rem;
+        text-align: center;
+        flex-basis: 100%;
+        @include md {
+            padding-block:5rem;
+            flex-wrap: nowrap;
+            flex-basis: 33%;
+        }
+
+        &:nth-of-type(2){
+        // added the decoration on the title instead of the box because the image will move with the box then resizing
+        .details__title{
+            position: relative;
+            width: fit-content;
+            margin-inline: auto;
+            &::before{
+                content: "";
+                background: url(../images/detail-lines.svg);
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                background-size: 70%;
+                background-repeat: no-repeat;
+                left: -2rem;
+                top:-3.5rem;
+
+                @include md {
+                    left: -2.5rem;
+                    top:-3.5rem;
+                    background-size: 80%;
+                }
+                @include md-retina{
+                    background-size: 80%;
+                    left:-2.2rem;
+                    top:-4rem;
+                }
+                @include lg {
+                    left: -3rem;
+                    top:-4.5rem;
+                    background-size: contain;
+                }
+                @include xxl{
+                    left: -2.5rem;
+                    top:-3.6rem;
+                }
+
+            }
+          }
+        }
+    }
+    &__title {
+        font-size: 2.5rem;
+        @include lg {
+            font-size: 3rem;
+        }
+    }
+    &__title, &__subtitle{
+        color:white;
+    }
+    &__subtitle{
+        margin-top:1.5rem;
+    }
+}
+
+
+// brands
+.brands__wrapper{
+    display: flex;
+    justify-content: center;
+}
+.brands{
+    margin-block: 8rem;
+    text-align: center;
+    &__title {
+        margin-bottom: 2.5rem;
+        font-size: .875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+    }
+}
+
+// features
+
+.features {
+    width: 100%;
+}
+.feature {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 44rem;
+    margin-inline: auto;
+
+    @include lg {
+        flex-basis: 50%;
+        flex-flow: row wrap;
+        max-width: none;
+    }
+    &__left, &__right{
+        flex-basis: 50%;
+    }
+    &__left {
+        @include lg{
+            margin-inline: 0;
+        }
+    }
+
+    &__right {
+        @include md {
+            margin-inline: none;
+        }
+        .feature__image {
+            width: 44rem;
+            @include lg {
+                width: 38rem;
+            }
+        }
+    }
+
+    &:nth-of-type(1), &:nth-of-type(2) {
+        margin-block: 5rem;
+    }
+
+    // first feature
+    &:nth-of-type(1) {
+        margin-top:4rem;
+        .feature__left {
+            order:2;
+            @include lg {
+                padding-left: 4rem;
+            }
+        }
+    }
+
+    &:nth-of-type(2), &:nth-of-type(3){
+        .feature__headline {
+            margin-top: 2rem;
+            @include md {
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    // second feature
+    &:nth-of-type(2) {
+        margin-block: 2rem 6rem;
+        .feature__left {
+            order: 2;
+        }
+        .feature__right {
+            order: 1;
+            @include lg {
+                order: 2;
+            }
+        }
+        .feature__headline {
+            @include lg {
+                margin-top: 2rem;
+            }
+            @include lg-2 {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    // third feature
+    &:nth-of-type(3) {
+        margin-block: 8rem;
+        .feature__left {
+            order: 2;
+            @include lg {
+                padding-left: 4rem;
+            }
+        }
+        .feature__headline {
+            @include lg {
+                margin-top: 4rem;
+            }
+            @include lg-2 {
+                margin-top: 6rem;
+            }
+        }
+    }
+
+    &__headline{
+        max-width: 28ch;
+        margin-top: 2rem;
+        br {
+            display: none;
+            @include lg {
+                display: block;
+            }
+        }
+        @include md {
+            margin-top: 1rem;
+
+        }
+        @include lg {
+            font-size: 2.25rem;
+        }
+        @include lg-2 {
+            font-size: 3rem;
+        }
+    }
+    &__title{
+        margin-top: 3rem;
+    }
+    &__description {
+        max-width: 43ch;
+        line-height: 1.75rem;
+        @include xs {
+            margin-inline: 0;
+        }
+    }
+    &__description, &__list{
+        margin-top: 1.75rem;
+    }
+    &__description, &__item {
+        color: $text;
+    }
+    &__item {
+        position: relative;
+        max-width: 36ch;
+        margin: 1.5rem 0 1.5rem 3rem;
+        &::before{
+            position: absolute;
+            content: url(../images/checkmark2.svg);
+            top: -0.188rem;
+            left: -3rem;
+        }
+        span{
+            color:black;
+            font-weight: bold;
+        }
+    }
+    &__link-group {
+        gap: 1rem;
+        margin-top: 3.5rem;
+    }
+    &__link {
+        img {
+            width: 12rem;
+        }
+    }
+    &__btn-group {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    &__btn:nth-of-type(2){
+        padding: 1.25rem 1.75rem;
+        display: none;
+        @include sm {
+            display: block;
+        }
+    }
+}
+
+
+// pricing
+
+.pricing{
+    &__group {
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+        text-align: center;
+        padding-top: 5rem;
+        @include md {
+            &::after{
+                content: url(../images/line-decoration.svg);
+                position: absolute;
+                top: 90%;
+                right: 0rem;
+            }
+            @include lg {
+                right: 1.5rem;
+            }
+        }
+    }
+    &__text {
+        margin-top:1.5rem;
+        color: $text;
+    }
+    &__options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        margin-block: 2.25rem 6.5rem;
+        margin-inline: auto;
+        padding: .438rem .688rem;
+        border-radius: 10rem;
+        background: white;
+        box-shadow: $bs-base;
+    }
+    &__option {
+        transition: none; // disable default transition of the button
+        flex-basis: 50%;
+        padding: .875rem 1.375rem;
+        border-radius:10rem;
+        background: white;
+        color: $dark;
+    }
+    &__option--active {
+        background: $primary;
+        color:white;
+        z-index: 1;
+    }
+    &__plans {
+        justify-items: center;
+    }
+    &__plan{
+        grid-column: span 6;
+        width: 100%;
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+        margin-block: 1rem;
+        background: white;
+        border: 1px solid hsla(0, 0%, 0%, 0.2);
+        box-shadow: $bs-pricing;
+        border-radius: 20px;
+        @include sm {
+            grid-column: 2 / span 4;
+        }
+        @include md {
+            margin-block:0;
+            grid-column: span 6;
+        }
+        @include lg {
+            grid-column: span 6;
+        }
+        @include lg-2 {
+            grid-column: span 4;
+        }
+    }
+    &__plan:nth-of-type(2){
+        position: relative;
+        border: 1px solid $primary;
+        @include lg-2 {
+            top:-2rem;
+        }
+
+        &::before , &::after{
+            position: absolute;
+        }
+        &::after {
+            content: "";
+            background-image: url(../images/bestseller2.png);
+            background-size: contain;
+            position: absolute;
+            transform: translate3d(0px, 0px, 0px);
+            -webkit-transform: translate3d(0,0,0);
+            width: 132px;
+            height: 49px;
+            z-index: 10;
+            top: 8%;
+            right:.5rem;
+            @include xs {
+                right: 2rem;
+
+            }
+        }
+    }
+    &__plan:nth-of-type(3){
+        @include md {
+            grid-column: 4 / span 6;
+        }
+        @include lg-2 {
+            grid-column: span 4;
+        }
+
+    }
+
+    &__description {
+        margin-bottom: 1.5rem;
+    }
+
+    &__price {
+        font-size: 2.5rem;
+        @include md {
+            font-size: 3rem
+        }
+        margin-block: 1rem 0rem;
+        span{
+            font-size: 1rem;
+            margin-left:.5rem;
+            font-weight: 400;
+            color: $text;
+        }
+    }
+
+    &__item {
+        position: relative;
+        margin-left: 2rem;
+        padding-block: .375rem;
+        &::before {
+            content: url(../images/checkmark.svg);
+            position: absolute;
+            left:-2rem;
+        }
+    }
+
+    &__btn {
+        margin-top: 1.5rem;
+        width: 100%;
+    }
+    &__btn:is(.btn-secondary){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:.5rem;
+    }
+    &__description, &__item {
+        color: $text;
+    }
+}
+
+
+// integrations
+
+.integrations {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow-x: clip;
+    padding-inline: 2rem;
+    margin-block: 10rem;
+    @include md {
+        display: flex;
+        min-height: 48rem;
+        margin-block: 6rem;
+        background: url(../images/integration-lines.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__items {
+        display: flex;
+        @include md {
+            display: block;
+            position: relative;
+            top:-17rem;
+        }
+    }
+    &__item {
+        margin-left:-1rem;
+        img {
+            min-width: 8rem;
+            min-height: 8rem;
+        }
+
+        &:nth-of-type(odd){
+            transform: translateY(-1.5rem);
+        }
+        @include md {
+            display: none;
+            position: absolute;
+            transform: translateY(0) !important;
+        }
+        @include lg {
+            display: block;
+        }
+
+        &:nth-of-type(1){
+            margin-left:-4rem;
+            @include sm {
+                margin-left: 0rem;
+            }
+            @include lg {
+                left: -10rem;
+                top: 10rem;
+            }
+        }
+        &:nth-of-type(2){
+            @include lg {
+                left:-13rem;
+                top: 0;
+            }
+            @include xl {
+                left: -20rem;
+            }
+        }
+        &:nth-of-type(3){
+            @include lg {
+                left: -13rem;
+                top: 20rem;
+            }
+            @include xl {
+                left: -20rem;
+            }
+        }
+        &:nth-of-type(4){
+            @include lg {
+                top: 0;
+                left: 43rem;
+            }
+            @include xl {
+                left: 50rem
+            }
+        }
+        &:nth-of-type(5){
+            @include lg {
+                top: 10rem;
+                left: 40rem;
+            }
+            @include xl {
+                left: 40rem;
+            }
+        }
+        &:nth-of-type(6){
+            @include lg {
+                top: 20rem;
+                left: 43rem;
+            }
+            @include xl {
+                left: 50rem;
+            }
+        }
+    }
+
+    &__group {
+        margin-top: 5rem;
+        text-align: center;
+        @include md {
+            margin-top: 0;
+        }
+    }
+    &__overline, &__description {
+        color: $text;
+    }
+    &__title, &__description {
+        margin-inline: auto;
+    }
+    &__title {
+        max-width: 20ch;
+    }
+    &__description {
+        max-width: 40ch;
+        margin-top: 1.5rem;
+    }
+    &__group--btn {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2.5rem;
+    }
+    &__btn {
+        width: 16rem;
+        @include sm {
+            width: auto;
+        }
+    }
+}
+
+
+
+
+// testiomials
+
+.swiper {
+    @include lg {
+        overflow: visible !important;
+    }
+    &-pagination {
+        padding-bottom:5rem;
+    }
+}
+
+.testimonials__wrapper{
+    position: relative;
+    margin-block: 10rem;
+    padding-bottom: 10rem;
+    @include md {
+        margin-block: 0 10rem;
+    }
+
+    &::before {
+        content: url(../images/quote-custom.svg);
+        position: absolute;
+        width: fit-content;
+        top:-2.5rem;
+        left: 50%; 
+        transform: translateX(-50%);
+        z-index: 10;
+        padding: 1.5rem;
+        border-radius: 50%;
+        background:white;
+    }
+
+    &-overline, &-headline {
+        text-align: center;
+    }
+    &-overline {
+        padding-block: 7.5rem 1rem;
+    }
+    &-headline {
+        padding-bottom: 6rem;
+    }
+}
+
+.testimonials {
+    gap: 0rem;
+    @include md {
+        gap: 2rem;
+    }
+
+    &__swiper {
+        border-radius: 20px;
+        @include sm {
+            max-width: 32.5rem;
+        }
+        @include md {
+            max-width: none;
+        }
+    }
+}
+
+.testimonial{
+    background: $white;
+    padding: 2.625rem 2.75rem 3.5rem 2.75rem;
+    border-radius: 20px;
+    width: 100%;
+    @include md {
+        grid-column: span 6;
+
+    }
+    @include lg {
+        grid-column: span 4;
+        &:not(:nth-of-type(2), :nth-of-type(5)){
+            margin-block:0;
+        }
+        &:nth-of-type(2), &:nth-of-type(5){
+            transform: translateY(-3rem);
+        }
+    }
+
+
+    &__avatar{
+        display: flex;
+        align-items: center;
+        img {
+            width: 3.75rem;
+        }
+    }
+    &__name {
+        font-family: $ff-gilroy;
+        font-weight: bold;
+    }
+    &__user-details{
+        margin-inline: 1.5rem;
+    }
+    &__description {
+        color: $dark;
+        padding-block: 2.25rem 3rem;
+        max-width: 36ch;
+    }
+    &__company {
+        font-size: .875rem;
+    }
+    &__company, &__date {
+        color: $text;
+    }
+    &__date{
+        align-self: flex-end;
+    }
+}
+
+
+.faq {
+    &__wrapper {
+        flex-flow: column wrap;
+        @include md {
+            flex-flow: row nowrap;
+        }
+    }
+    &__group{
+        text-align: center;
+        margin-block: 1rem 3rem;
+    }
+    &__text{
+        margin-top: 1rem;
+        margin-inline: auto;
+        color: $text;
+        max-width: 30ch;
+        @include sm {
+            max-width: 40ch;
+        }
+    }
+    &__left, &__right {
+        flex-basis: 100%;
+        @include md {
+            flex-basis: 50%;
+
+        }
+    }
+    &__left {
+        @include md {
+            margin-right: 2rem;
+
+        }
+    }
+    &__description {
+        padding: 1.5rem;
+        color: $text;
+        background: hsl(230, 43%, 99%);
+    }
+    &__details {
+        padding-block:.5rem;
+
+        // rotate chevron icon when accordion is open
+        &[open]  .faq__summary::after{
+            top: 10%;
+            transform: rotate(180deg);
+        }
+        &[open]  .faq__summary{
+            border-radius: 12px 12px 0 0;
+        }
+        &[open] .faq__description {
+            border: 2px solid #F5F6FB;
+            border-radius: 0 0 12px 12px;
+        }
+    }
+    &__summary {
+        position: relative;
+        padding: 1.5rem 4rem 1.5rem 1.5rem;
+        border-radius: 12px;
+        cursor: pointer;
+
+        // custom chevron icon
+        &::after {
+            content: url(../images/chevron-bottom.svg);
+            transition: transform 250ms ease;
+            position: absolute;
+            top: 20%;
+            right: .5rem;
+        }
+        // hide default chevron icon
+        &::marker, &::-webkit-details-marker{
+            display: none;
+            content: "";
+        }
+        background: #F5F6FB;
+    }
+}
+
+// newsletter
+
+.newsletter {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    background: $dark-blue;
+    margin-top: 8rem;
+    margin-bottom: -10rem;
+    min-height: 25.5rem;
+
+    @include md {
+        margin-top: 15rem;
+    }
+    @include lg {
+        border-radius: 20px;
+    }
+
+
+    &__left, &__right {
+        @include lg {
+            flex-basis: 50%;
+
+        }
+    }
+    &__left {
+        margin-inline: auto;
+        padding-inline: 2rem;
+        padding-block: 8rem;
+        @include lg {
+            flex-basis: 50%;
+            padding-inline-start: 4rem;
+            padding-block: 3.5rem 3.7rem;
+
+        }
+    }
+
+    &__right{
+        position: relative;
+        background: url(../../images/newsletter-lines.svg);
+        background-size: 100%;
+        background-position: top right;
+        background-repeat: no-repeat;
+        @include lg {
+            &::before{
+                content: url(../images/woman-newsletter.png);
+                position: absolute;
+                max-width: 100%;
+                display: block;
+                right:0;
+                bottom:0;
+                line-height: 0; // fixes small space under image
+            }
+        }
+
+    }
+
+    &__headline {
+        color:white;
+
+    }
+    &__description {
+        margin-block: 2rem 3rem;
+        max-width: 50ch;
+        color: #D2D2D3;
+    }
+    &__group {
+        display: flex;
+        max-width: 32rem;
+    }
+    $button-margin: -9.5rem;
+    &__input {
+        width: calc(100% - $button-margin);
+        padding: 1rem;
+        margin-right: math.abs($button-margin);
+        border: none;
+        border-radius: 12px 0 0 12px;
+    }
+    &__btn{
+        border-radius: 0 12px 12px 0;
+        padding: 1rem 1.5rem;
+        margin-left: $button-margin;
+        @include md {
+            padding: 1.125rem 2rem;
+        }
+    }
+
+}
