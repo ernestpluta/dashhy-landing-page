@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 :root{
+  accent-color: $primary;
   font-size: .938rem;
   @include md {
     font-size: 1rem;
@@ -13,7 +14,6 @@
   @include md-retina {
     font-size:.938rem;
   }
-  accent-color: $primary;
   @include xxl{
     font-size:1.125rem;
   }

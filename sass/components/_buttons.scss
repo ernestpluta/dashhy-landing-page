@@ -22,10 +22,12 @@ input[type="button"] {
     transition: 300ms ease;
     border-radius: 12px;
     font-weight: 500;
-    outline: 4px solid transparent;
 
+    &:focus:not(:focus-visible){
+        outline: none;
+    }
     &:focus-visible {
-        outline: 4px solid $primary-focus;
+        box-shadow: 0 0 0 4px scale-color($primary-focus);
     }
 }
 a[href],
@@ -35,12 +37,14 @@ select:not([disabled]),
 textarea:not([disabled]),
 button:not([disabled]),
 iframe,
+summary,
 [tabindex],
 [contentEditable=true]
 {
+    outline:none;
     &:focus-visible:not([tabindex='-1'])
     {
-        outline: 4px solid $primary-focus;
+        box-shadow: 0 0 0 4px scale-color($primary-focus);
     }
 }
 

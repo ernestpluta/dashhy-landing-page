@@ -17,11 +17,11 @@
         <nav class="navigation" aria-label="Primary">
           <img class="navigation__logo" src="./images/logo.svg" alt="Dashhy logo">
           <ul class="navigation__list hideMobileMenu" role="list">
-            <li class="navigation__item"><a class="navigation__link" href="#">Home</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Features</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Pricing</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Testimonials</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">FAQ</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="/">Home</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#features">Features</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#pricing">Pricing</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#testimonials">Testimonials</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#faq">FAQ</a></li>
             <hr class="navigation__separator">
             <button class="navigation__btn btn-secondary navigation__item--mobile">Log in / Sign up</button>
           </ul>
@@ -51,7 +51,9 @@
                 <picture>
                   <source class="hero__image-big" 
                   srcset="./images/dashboard-2.png" media="(min-width: 48em)"/>
-                  <img class="hero__image" src="./images/hero-mobile.png" alt="dashboard image">
+                  <source class="hero__image-big" 
+                  srcset="./images/hero-mobile3.png" media="(min-width: 36em)" width="460" height="441"/>
+                  <img class="hero__image" src="./images/hero-mobile3.png" alt="dashboard image">
                  </picture>
               </div>
             </div>
@@ -89,7 +91,7 @@
       </div>
 
       <div class="container flex">
-        <div class="features">
+        <div id="features" class="features">
           <div class="feature">
             <div class="feature__left">
               <h2 class="feature__headline">Stop worrying and <br/> start making profits.</h2>
@@ -152,7 +154,7 @@
 
 
       <div class="bg-pricing">
-        <div class="pricing container">
+        <div id="pricing" class="pricing container">
           <div class="pricing__group">
             <h1 class="pricing__headline">Ready to get started?</h1>
             <p class="pricing__text">Choose a plan appropriate for your needs.</p>
@@ -230,7 +232,7 @@
       </div>
 
       <div class="bg-testimonials">
-        <div class="testimonials__wrapper container">
+        <div id="testimonials" class="testimonials__wrapper container">
           <p class="testimonials__wrapper-overline overline">Testimonials</p>
           <h2 class="testimonials__wrapper-headline">Our customers say it best.</h2>
           <div class="testimonials__swiper swiper">
@@ -309,7 +311,7 @@
 
 
 
-      <div class="faq container">
+      <div id="faq" class="faq container">
         <div class="faq__group">
           <h1 class="faq__headline">Frequently Asked Questions</h1>
           <p class="faq__text"> If your question doesn't appear here you can also contact us via email.</p>
@@ -399,11 +401,11 @@
             <h5 class="footer__title">Navigation</h5>
             <nav aria-label="Footer">
               <ul class="footer__list" role="list" aria-label="Navigation">
-                <li class="footer__item"><a class="footer__link" href="#">Home</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Features</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Testimonials</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Pricing</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">FAQ</a></li>
+                <li class="footer__item"><a class="footer__link" href="/">Home</a></li>
+                <li class="footer__item"><a class="footer__link" href="#features">Features</a></li>
+                <li class="footer__item"><a class="footer__link" href="#testimonials">Testimonials</a></li>
+                <li class="footer__item"><a class="footer__link" href="#pricing">Pricing</a></li>
+                <li class="footer__item"><a class="footer__link" href="#faq">FAQ</a></li>
               </ul>
             </nav>
           </div>

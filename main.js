@@ -6,25 +6,20 @@ const menuOpen = document.querySelector(".menu-open");
 const navbar = document.querySelector('.navigation__wrapper');
  // pricing plan option
 const option = document.querySelectorAll(".pricing__option")
-const pricingType = document.querySelectorAll(".pricing__price > span")
 
 // change pricing options
 option[0].addEventListener("click", () => {
   if(!option[0].classList.contains("pricing__option--active")){
     option[0].classList.add("pricing__option--active")
     option[1].classList.remove("pricing__option--active")
-    pricingType.forEach(type => {
-      type.textContent = "/ month"
-    })
+
   }
 })
 option[1].addEventListener("click", () => {
   if(!option[1].classList.contains("pricing__option--active")){
     option[1].classList.add("pricing__option--active")
     option[0].classList.remove("pricing__option--active")
-    pricingType.forEach(type => {
-      type.textContent = "/ year"
-    })
+
   }
 })
 
@@ -86,13 +81,10 @@ else {
       if(screenWidth < 768 && mySwiper == undefined) {
         document.querySelector(".swiper-pagination").style.display = "block";
           mySwiper = new Swiper ('.swiper', {
-            observer: true,
-            observeParents: true,
             slidesPerView: 1,
             centeredSlides: true,
             spaceBetween: 30,
             a11y: true,
-            watchSlidesVisibility: true,
             keyboardControl: true,
             grabCursor: true,
             pagination: {
