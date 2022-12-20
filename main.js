@@ -7,7 +7,7 @@ const navbar = document.querySelector('.navigation__wrapper');
  // pricing plan option
 const option = document.querySelectorAll(".pricing__option")
 
-// change pricing options
+// change pricing active button
 option[0].addEventListener("click", () => {
   if(!option[0].classList.contains("pricing__option--active")){
     option[0].classList.add("pricing__option--active")
@@ -22,7 +22,16 @@ option[1].addEventListener("click", () => {
 
   }
 })
-
+// close mobile menu when clicking on the navigation__item
+menuItems.forEach(item => {
+  item.addEventListener("click", () => {
+      if (!menu.classList.contains("hideMobileMenu")){
+      menu.classList.add("hideMobileMenu")
+      menuClose.style.display = "none";
+      menuOpen.style.display = "block";
+    }
+    })
+  })
 // toggle hamburger menu icon and class
 hamburger.addEventListener("click", () => {
   if (menu.classList.contains("hideMobileMenu")) {
